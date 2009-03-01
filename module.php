@@ -44,15 +44,15 @@ if(!function_exists(dkpinfo_module)){
 
 		$a_dkpinfo = array();
 		// Get total raids
-    	$sql ="SELECT count(*) as alle FROM ".RAIDS_TABLE.";";
+    	$sql ="SELECT count(*) as alle FROM __raids;";
 		$a_dkpinfo['raids'] = $db->query_first($sql);
 
 		// Get total players
-		$sql = "SELECT count(member_id) FROM ".MEMBERS_TABLE ;
+		$sql = "SELECT count(member_id) FROM __members";
 		$a_dkpinfo['member'] = $db->query_first($sql);
 
 		// Get total items
-		$sql = "SELECT COUNT(item_id) FROM ".ITEMS_TABLE ;
+		$sql = "SELECT COUNT(item_id) FROM __items";
 		$a_dkpinfo['items'] = $db->query_first($sql);
 
 		$DKPInfo = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder">
