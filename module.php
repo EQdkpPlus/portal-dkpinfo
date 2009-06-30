@@ -38,29 +38,38 @@ $portal_module['dkpinfo'] = array(
 $portal_settings['dkpinfo'] = array(
 );
 
-if(!function_exists(dkpinfo_module)){
-  function dkpinfo_module(){
-  	global $eqdkp , $user , $tpl, $db, $plang;
+if(!function_exists(dkpinfo_module))
+{
+  function dkpinfo_module()
+  {
+  	global $eqdkp , $user , $tpl, $db, $plang, $pdc;
 
-		$a_dkpinfo = array();
-		// Get total raids
-    	$sql ="SELECT count(*) as alle FROM __raids;";
-		$a_dkpinfo['raids'] = $db->query_first($sql);
+  		$DKPInfo = $pdc->get('dkp.portal.modul.dkpinfo',false,true);
+  		if (!$DKPInfo) 
+  		{
 
-		// Get total players
-		$sql = "SELECT count(member_id) FROM __members";
-		$a_dkpinfo['member'] = $db->query_first($sql);
-
-		// Get total items
-		$sql = "SELECT COUNT(item_id) FROM __items";
-		$a_dkpinfo['items'] = $db->query_first($sql);
-
-		$DKPInfo = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder">
-					<tr><td class="row1">'.$plang['portal_info_raids'].'</td><td class="row1">'. $a_dkpinfo['raids']. '</td></tr>
-					<tr><td class="row2">'.$plang['portal_info_player'].'</td><td class="row2">'. $a_dkpinfo['member']. '</td></tr>
-					<tr><td class="row1">'.$plang['portal_info_items'].'</td><td class="row1">'. $a_dkpinfo['items']. '</td></tr>
-					</table>
-					';
+			$a_dkpinfo = array();
+			// Get total raids
+	    	$sql ="SELECT count(*) as alle FROM __raids;";
+			$a_dkpinfo['raids'] = $db->query_first($sql);
+	
+			// Get total players
+			$sql = "SELECT count(member_id) FROM __members";
+			$a_dkpinfo['member'] = $db->query_first($sql);
+	
+			// Get total items
+			$sql = "SELECT COUNT(item_id) FROM __items";
+			$a_dkpinfo['items'] = $db->query_first($sql);
+	
+			$DKPInfo = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder">
+						<tr><td class="row1">'.$plang['portal_info_raids'].'</td><td class="row1">'. $a_dkpinfo['raids']. '</td></tr>
+						<tr><td class="row2">'.$plang['portal_info_player'].'</td><td class="row2">'. $a_dkpinfo['member']. '</td></tr>
+						<tr><td class="row1">'.$plang['portal_info_items'].'</td><td class="row1">'. $a_dkpinfo['items']. '</td></tr>
+						</table>
+						';
+			$pdc->put('dkp.portal.modul.dkpinfo',$DKPInfo,86400,false,true);
+  		}
+			
 
 		return $DKPInfo;
   }
