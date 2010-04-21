@@ -21,9 +21,10 @@ if ( !defined('EQDKP_INC') ){
 }
 
 $plang = array_merge($plang, array(
-  'dkpinfo'               => 'Infos DKP',
-  'portal_info_raids'     => 'Raids',
-  'portal_info_player'    => 'Membres',
-  'portal_info_items'     => 'Objets',
+  'quickdkp'        => 'Raccourcis DKP',
+  'Points_class'    => 'Classe:',
+  'Points_Char'     => 'Nom:',
+  'Points_DKP'      => 'DKP:',
+  'Points_CHAR'     => 'Pas de membre',
 ));
 ?>

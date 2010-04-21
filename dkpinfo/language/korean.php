@@ -21,9 +21,10 @@ if ( !defined('EQDKP_INC') ){
 }
 
 $plang = array_merge($plang, array(
-  'dkpinfo'               => '공격대 정보',
-  'portal_info_raids'     => '레이드 횟수',
-  'portal_info_player'    => '플레이어',
-  'portal_info_items'     => '아이템',
+  'quickdkp'        => '빠른 점수 정보',
+  'Points_class'    => '직업:',
+  'Points_Char'     => '캐릭터:',
+  'Points_DKP'      => '점수:',
+  'Points_CHAR'     => '멤버가 할당되지 않았습니다.',
 ));
 ?>
