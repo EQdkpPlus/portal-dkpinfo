@@ -21,23 +21,20 @@ if ( !defined('EQDKP_INC') ){
 }
 
 class dkpinfo_portal extends portal_generic {
-	public static function __shortcuts() {
-		$shortcuts = array('user', 'pdh', 'pdc');
-		return array_merge(parent::$shortcuts, $shortcuts);
-	}
 
-	protected $path		= 'dkpinfo';
-	protected $data		= array(
+	protected static $path		= 'dkpinfo';
+	protected static $data		= array(
 		'name'			=> 'DKPinfo Module',
 		'version'		=> '2.0.0',
 		'author'		=> 'EQdkp-Plus Team',
 		'icon'			=> 'fa-info-circle',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'DKP Overview',
+		'lang_prefix'	=> 'dkpinfo_'
 	);
-	protected $positions = array('left1', 'left2', 'right');
+	protected static $positions = array('left1', 'left2', 'right');
 	protected $settings	= array();
-	protected $install	= array(
+	protected static $install	= array(
 		'autoenable'		=> '1',
 		'defaultposition'	=> 'left2',
 		'defaultnumber'		=> '0',
@@ -67,5 +64,4 @@ class dkpinfo_portal extends portal_generic {
 		return $output;
 	}
 }
-if(version_compare(PHP_VERSION, '5.3.0', '<')) registry::add_const('short_dkpinfo_portal', dkpinfo_portal::__shortcuts());
 ?>
