@@ -45,10 +45,6 @@ class dkpinfo_portal extends portal_generic {
 			'member_update',
 			'raid_update'
 	);
-	
-	public function reset(){
-		$this->pdc->del('dkp.portal.modul.dkpinfo');
-	}
 
 	public function output() {
   		$output = $this->pdc->get('dkp.portal.modul.dkpinfo',false,true);
