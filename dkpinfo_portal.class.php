@@ -45,6 +45,8 @@ class dkpinfo_portal extends portal_generic {
 			'member_update',
 			'raid_update'
 	);
+	
+	protected static $apiLevel = 20;
 
 	public function output() {
   		$output = $this->pdc->get('dkp.portal.modul.dkpinfo',false,true);
