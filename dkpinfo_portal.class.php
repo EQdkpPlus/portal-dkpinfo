@@ -28,7 +28,7 @@ class dkpinfo_portal extends portal_generic {
 	protected static $path		= 'dkpinfo';
 	protected static $data		= array(
 		'name'			=> 'DKPinfo Module',
-		'version'		=> '2.0.0',
+		'version'		=> '3.0.0',
 		'author'		=> 'EQdkp-Plus Team',
 		'icon'			=> 'fa-info-circle',
 		'contact'		=> EQDKP_PROJECT_URL,
