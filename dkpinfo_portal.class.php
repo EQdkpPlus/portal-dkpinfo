@@ -54,7 +54,7 @@ class dkpinfo_portal extends portal_generic {
 	public function output() {
   		$output = $this->pdc->get('dkp.portal.modul.dkpinfo',false,true);
   		if (!$output) {
-			$output = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder">
+			$output = '<table class="table fullwidth noborder">
 						<tr><td class="row1">'.$this->user->lang('portal_info_raids').'</td><td class="row1">'.count($this->pdh->get('raid', 'id_list')).'</td></tr>
 						<tr><td class="row2">'.$this->user->lang('portal_info_player').'</td><td class="row2">'.count($this->pdh->get('member', 'id_list')).'</td></tr>
 						<tr><td class="row1">'.$this->user->lang('portal_info_items').'</td><td class="row1">'.count($this->pdh->get('item', 'id_list')).'</td></tr>
