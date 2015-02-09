@@ -52,7 +52,7 @@ class dkpinfo_portal extends portal_generic {
 	protected static $apiLevel = 20;
 
 	public function output() {
-  		$output = $this->pdc->get('dkp.portal.modul.dkpinfo',false,true);
+  		$output = $this->pdc->get('dkp.portal.module.dkpinfo',false,true);
   		if (!$output) {
 			$output = '<table class="table fullwidth noborder">
 						<tr><td class="row1">'.$this->user->lang('portal_info_raids').'</td><td class="row1">'.count($this->pdh->get('raid', 'id_list')).'</td></tr>
@@ -60,7 +60,7 @@ class dkpinfo_portal extends portal_generic {
 						<tr><td class="row1">'.$this->user->lang('portal_info_items').'</td><td class="row1">'.count($this->pdh->get('item', 'id_list')).'</td></tr>
 						</table>
 						';
-			$this->pdc->put('dkp.portal.modul.dkpinfo',$output,86400,false,true);
+			$this->pdc->put('dkp.portal.module.dkpinfo',$output,86400,false,true);
 		}
 		return $output;
 	}
