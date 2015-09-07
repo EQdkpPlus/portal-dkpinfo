@@ -28,7 +28,7 @@ class dkpinfo_portal extends portal_generic {
 	protected static $path		= 'dkpinfo';
 	protected static $data		= array(
 		'name'			=> 'DKPinfo Module',
-		'version'		=> '3.0.1',
+		'version'		=> '3.0.2',
 		'author'		=> 'EQdkp-Plus Team',
 		'icon'			=> 'fa-info-circle',
 		'contact'		=> EQDKP_PROJECT_URL,
@@ -52,16 +52,14 @@ class dkpinfo_portal extends portal_generic {
 	protected static $apiLevel = 20;
 
 	public function output() {
-  		$output = $this->pdc->get('dkp.portal.module.dkpinfo',false,true);
-  		if (!$output) {
+
 			$output = '<table class="table fullwidth noborder">
 						<tr><td class="row1">'.$this->user->lang('portal_info_raids').'</td><td class="row1">'.count($this->pdh->get('raid', 'id_list')).'</td></tr>
 						<tr><td class="row2">'.$this->user->lang('portal_info_player').'</td><td class="row2">'.count($this->pdh->get('member', 'id_list')).'</td></tr>
 						<tr><td class="row1">'.$this->user->lang('portal_info_items').'</td><td class="row1">'.count($this->pdh->get('item', 'id_list')).'</td></tr>
 						</table>
 						';
-			$this->pdc->put('dkp.portal.module.dkpinfo',$output,86400,false,true);
-		}
+
 		return $output;
 	}
 }
